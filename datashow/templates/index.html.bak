@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Information about College Enrollment</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ url_for('index') }}">高校招生信息展示</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>介绍</h1>
+        <p>本站支持简单便捷的浏览国内各高校的招生情况，并个性化生成各种统计图标。</p>
+        <p><a class="btn btn-primary btn-lg" href="{{ url_for('feature_1') }}" role="button">开始吧 &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>招生信息浏览</h2>
+          <p>支持查询各个高校历年招生情况，包括录取人数，录取均分、最高分、最低分，录取线差等等。目前支持C9高校及其他几所著名高校。 </p>
+          <p><a class="btn btn-default" href="{{ url_for('feature_1') }}" role="button">查看详细 &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>招生信息图表展示</h2>
+          <p>支持以图表的形式展示各个高校间历年录取情况的对比，对比内容可以自由选择，包括录取人数、录取最低分等等。对比高校可以自由选择。</p>
+          <p><a class="btn btn-default" href="{{ url_for('feature_2') }}" role="button">查看详细 &raquo;</a></p>
+       </div>
+	    <div class="col-md-4">
+          <h2>学校间不同专业分数对比</h2>
+          <p>支持查询各高校热门专业历年招生情况，包括，录取均分、最高分、最低分，并以图表形式展示 </p>
+          <p><a class="btn btn-default" href="{{ url_for('feature_1') }}" role="button">查看详细 &raquo;</a></p>
+        </div>
+        
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company Lab_database@nju</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+  </body>
+</html>

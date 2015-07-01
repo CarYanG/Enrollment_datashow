@@ -1,0 +1,132 @@
+﻿
+{% extends "layout.html" %}
+ {% block body %}
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ url_for('index') }}">高校招生信息展示</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+
+          <ul class="nav nav-sidebar">
+            <li><a href="{{ url_for('index') }}">首页</a></li>
+          </ul>
+
+          <ul class="nav nav-sidebar">
+            <li ><a href="{{ url_for('feature_1') }}">招生信息浏览</a></li>
+          </ul>
+
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="{{ url_for('feature_2') }}">高校招生信息图表对比<span class="sr-only">(current)</span></a></li>
+          </ul>
+		   <ul class="nav nav-sidebar">
+            <li ><a href="{{ url_for('feature_3') }}">学校间不同专业分数对比</a></li>
+          </ul>
+
+        </div>
+
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">参数选择</h1>
+				<div class="table-responsive">
+				<form name="input" action="{{url_for('feature_2')}}" method="post">
+
+					<table class="table table-striped">
+					<thread>对比高校选择：<thread>
+					<input name="school" id="school" type="checkbox"  value="南京大学" />
+                    南京大学
+ 
+                    <input name="school" id="school" type="checkbox" value="北京大学" />
+                    北京大学
+ 
+                    <input name="school" id="school" type="checkbox" value="清华大学" />
+                    清华大学
+ 
+                    <input name="school" id="school" type="checkbox" value="复旦大学" />
+                    复旦大学
+
+                    <input name="school" id="school" type="checkbox" value="上海交通大学" />
+                    上海交通大学
+                    <input name="school" id="school" type="checkbox" value="华中科技大学" />
+                    华中科技大学
+                    <input name="school" id="school" type="checkbox" value="同济大学" />
+                    同济大学
+					<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <input name="school" id="school" type="checkbox" value="中国科学技术大学" />
+                    中国科学技术大学
+
+                    <input name="school" id="school" type="checkbox" value="浙江大学" />
+                    浙江大学
+         
+                    <input name="school" id="school" type="checkbox" value="中国人民大学" />
+                    中国人民大学
+ 
+                    <input name="school" id="school" type="checkbox" value="西安交通大学" />
+                    西安交通大学
+
+                    <input name="school" id="school" type="checkbox" value="哈尔滨工业大学" />
+                    哈尔滨工业大学
+                    <input name="school" id="school" type="checkbox" value="南开大学" />
+                    南开大学
+					<input name="school" id="school" type="checkbox" value="天津大学" />
+                    天津大学
+					</table>
+					<table>
+					<thread>对比项：<thread>
+					<input type="radio" name="item" value="最低分" />历年最低分
+
+					<input type="radio" name="item" value="均分" /> 历年均分
+
+					<input type="radio" name="item" value="录取线差" /> 历年录取线差
+
+					<input type="radio" name="item" value="录取人数" /> 历年录取人数
+					</table>
+					<br>
+					<table>
+					<thread>文理科选择：<thread>
+					<input type="radio" name="major" value="理科" />理科
+
+					<input type="radio" name="major" value="文科" />文科
+
+					</table>
+					<br>
+					
+					<input type="submit" value="绘制图表" class="btn btn-success" />
+				</form>
+				</div>
+			
+
+
+          <h2 class="sub-header">图像展示</h2>
+          <div class="table-responsive">
+            {%if imagename%}
+			<img src="..{{url_for('static',filename=imagename)}}">
+            {%endif%}
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+ {% endblock %}
